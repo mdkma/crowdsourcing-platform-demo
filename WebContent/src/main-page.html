@@ -18,6 +18,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
 <link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
 
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+
 <dom-module id="main-page">
   <template>
 
@@ -143,6 +146,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     </style>
 
+
+    <style is="custom-style">
+      paper-card.question { @apply(--layout-horizontal); }
+      .q-image {
+        width: 100px;
+        height: 170px;
+        background: url('./donuts.png');
+        background-size: cover;
+      }
+      .q-content {
+        @apply(--layout-flex);
+        float: left;
+      }
+      .q-header { @apply(--paper-font-headline); }
+      .q-name { color: var(--paper-grey-600); margin: 10px 0; }
+      }
+    </style>
+
     <!-- main panel -->
     <app-header-layout>
 
@@ -159,11 +180,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <div class="content">
         <template is="dom-repeat" items="{{recipes}}"><!-- No empty text node
         --><a href="#/detail/{{item.id}}" class="card-container">
-            <paper-card image="{{item.imageUrl}}">
-              <div class="card-content">
-                <h2>{{item.name}}</h2>
-                <p>By <span>{{item.author}}</span></p>
+            <paper-card class="question">
+              <div class="q-content">
+                <div class="card-content">
+                  <div class="q-header">{{item.name}}</div>
+                  <div class="q-name">{{item.author}}</div>
+                  <div>Live from space</div>
+                </div>
+                <div class="card-actions">
+                  <paper-button>
+                    <iron-icon icon="icons:arrow-forward" class="mr-1"></iron-icon>
+                    Answer
+                  </paper-button>
+                  <paper-button>
+                    <iron-icon icon="icons:report" class="mr-1"></iron-icon>
+                    Report
+                  </paper-button>
+                </div>
               </div>
+              <img src="{{item.imageUrl}}" class="q-image"></div>
             </paper-card>
           </a><!-- No empty text node
         --></template>
