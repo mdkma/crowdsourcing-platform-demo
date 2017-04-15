@@ -8,6 +8,19 @@
     <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
     <link rel="stylesheet" media="screen" href="css/base.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    
+    <link rel="import" href="bower_components/app-route/app-location.html">
+    <link rel="import" href="bower_components/app-route/app-route.html">
+
+    <link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
+    <link rel="import" href="bower_components/iron-pages/iron-pages.html">
+    <link rel="import" href="bower_components/iron-selector/iron-selector.html">
+
+    <link rel="import" href="bower_components/paper-item/paper-item.html">
+    <link rel="import" href="bower_components/paper-listbox/paper-listbox.html">
+    
+    <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="bower_components/iron-icon/iron-icon.html">
     <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
     <link rel="import" href="bower_components/app-layout/app-layout.html">
     <link rel="import" href="bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
@@ -29,17 +42,21 @@
       <app-header-layout>
         <app-header reveals effects="waterfall">
           <app-toolbar>
-            <paper-icon-button icon="app:menu" drawer-toggle></paper-icon-button>
+            <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
             <div main-title>Answer Questions</div>
           </app-toolbar>
         </app-header>
         <sample-content size="100"></sample-content>
       </app-header-layout>
+
+      <iron-pages selected="[[_pageData.page]]" attr-for-selected="name">
+          <paper-card image="" alt="Donuts" class="amber">
+              <div class="card-content">New cafe opened on Valencia St.</div>
+          </paper-card>
+      </iron-pages>
+
+
     </app-drawer-layout>
-    <paper-icon-button icon="menu"></paper-icon-button>
-    <paper-card image="" alt="Donuts" class="amber">
-        <div class="card-content">New cafe opened on Valencia St.</div>
-    </paper-card>
 </body>
 
 <style is="custom-style">
