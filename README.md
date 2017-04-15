@@ -1,2 +1,2 @@
-# Crowdsourcing Paltform Demo
+# Crowdsourcing Platform Demo
 A Java Web App
