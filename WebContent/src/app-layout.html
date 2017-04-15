@@ -30,6 +30,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="recipe-detail.html">
 <link rel="import" href="main-page.html">
+<link rel="import" href="profile-page.html">
 <link rel="import" href="app-icons.html">
 
 <dom-module id="app-layout">
@@ -48,7 +49,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
 
     .avatar-container .image {
-      background-image: url('//app-layout-assets.appspot.com/assets/pesto/avatar.jpg');
+      background-image: url('../data/img/profile_derek.jpg');
       background-size: contain;
       border-radius: 50%;
       height: 100%;
@@ -128,11 +129,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <!-- list/detail pages -->
       <iron-pages selected="[[_pageData.page]]" attr-for-selected="name">
 
-        <main-page name="profile" recipes="[[recipes]]">
+        <profile-page name="profile">
           <paper-icon-button icon="app:menu" drawer-toggle></paper-icon-button>
-        </main-page>
+        </profile-page>
 
-        <main-page name="home">
+        <main-page name="home" recipes="[[recipes]]">
           <paper-icon-button icon="app:menu" drawer-toggle></paper-icon-button>
         </main-page>
 
