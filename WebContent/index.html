@@ -23,7 +23,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,700">
   <link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
-  <link rel="import" href="src/recipe-app.html">
+  <link rel="import" href="src/app-layout.html">
 
   <style is="custom-style">
 
@@ -47,7 +47,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template is="dom-bind">
 
     <iron-ajax url="data/recipes.json" auto last-response="{{recipes}}"></iron-ajax>
-    <recipe-app recipes="[[recipes]]"></recipe-app>
+    <app-layout recipes="[[recipes]]"></app-layout>
 
   </template>
 
