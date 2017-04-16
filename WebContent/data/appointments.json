@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "name": "Prof. First Last",
+    "post": "President of PolyU",
+    "time": "14 days to go",
+    "location": "Central, Hong Kong",
+    "imageUrl": "data/img/profile_derek.jpg",
+    "description": "Good Chance to Meet!!!"
+  },
+  {
+    "id": "2",
+    "name": "Dr. First Last",
+    "post": "CEO of Inc",
+    "time": "18 days to go",
+    "location": "Wan Chai, Hong Kong",
+    "imageUrl": "data/img/profile_derek.jpg",
+    "description": "Good Chance to Meet1!!!"
+  }
+]

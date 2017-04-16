@@ -29,7 +29,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/app-layout/app-scrollpos-control/app-scrollpos-control.html">
 
 <link rel="import" href="recipe-detail.html">
-<link rel="import" href="main-page.html">
+<link rel="import" href="answer-history-page.html">
+<link rel="import" href="appointments-page.html">
 <link rel="import" href="profile-page.html">
 <link rel="import" href="app-icons.html">
 
@@ -133,17 +134,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <paper-icon-button icon="app:menu" drawer-toggle></paper-icon-button>
         </profile-page>
 
-        <main-page name="home" recipes="[[recipes]]">
+        <main-page name="home">
           <paper-icon-button icon="app:menu" drawer-toggle></paper-icon-button>
         </main-page>
 
-        <main-page name="answerHistory">
+        <answer-history-page name="answerHistory" recipes="[[recipes]]">
           <paper-icon-button icon="app:menu" drawer-toggle></paper-icon-button>
-        </main-page>
+        </answer-history-page>
 
-        <main-page name="appointment">
+        <appointments-page name="appointment" data="[[appointments]]">
           <paper-icon-button icon="app:menu" drawer-toggle></paper-icon-button>
-        </main-page>
+        </appointments-page>
 
         <recipe-detail
             id="detailView"
@@ -165,6 +166,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     properties: {
 
       recipes: Object,
+
+      appointments: Object,
 
       _route: Object,
 

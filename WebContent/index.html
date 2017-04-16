@@ -46,8 +46,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <template is="dom-bind">
 
-    <iron-ajax url="data/recipes.json" auto last-response="{{recipes}}"></iron-ajax>
-    <app-layout recipes="[[recipes]]"></app-layout>
+    <iron-ajax url="data/answerHistory.json" auto last-response="{{answerHistory}}"></iron-ajax>
+    <iron-ajax url="data/appointments.json" auto last-response="{{appointments}}"></iron-ajax>
+    <app-layout recipes="[[answerHistory]]" appointments="[[appointments]]"></app-layout>
 
   </template>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
