@@ -25,6 +25,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
   <link rel="import" href="src/app-layout.html">
 
+  <link rel="import" href="../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../bower_components/app-route/app-location.html">
+<link rel="import" href="../bower_components/app-route/app-route.html">
+
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
+
+<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../bower_components/app-layout/app-scrollpos-control/app-scrollpos-control.html">
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+
   <style is="custom-style">
 
     :root {
@@ -33,23 +54,103 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       };
     }
 
-    body {
+     body {
       margin: 0;
-      font-family: Raleway, sans-serif;
-      background-color: #f5f5f5;
+      font-family: 'Roboto', 'Noto', sans-serif;
+      background-color: #eee;
+    }
+
+    app-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      color: #fff;
+      background-color: #00AA8D;
+    }
+
+    paper-icon-button {
+      --paper-icon-button-ink-color: white;
+    }
+
+    paper-fab {
+      position: absolute;
+      right: 16px;
+      top: 248px;
+      will-change: transform;
+      transition: 0.1s -webkit-transform;
+      transition: 0.1s transform;
+      --paper-fab-background: #EF5458;
+      --paper-fab-keyboard-focus-background: #DF4448;
+    }
+
+    paper-fab.shrink-to-hidden {
+      -webkit-transform: scale3d(0, 0, 0);
+      transform: scale3d(0, 0, 0);
+    }
+
+    app-toolbar.middle {
+      height: 120px;
+    }
+
+    .middle-logo{
+      height:120px;
+    }
+
+    app-toolbar.bottom {
+      height: 92px;
+    }
+
+    sample-content {
+      padding-top: 276px;
+    }
+
+    [main-title] {
+      position: absolute;
+      margin-left: 64px;
+      font-size: 32px;
+      font-weight: 300;
+      background-image: url('../data/img/logo_l.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 240px;
+    }
+
+    [condensed-title] {
+      margin-left: 20px;
+      font-weight: 300;
+      background-image: url('../data/img/logo_m.png');
+      background-size: 90px;
     }
 
   </style>
 
 </head>
-<body unresolved>
+<body>
+
+   <app-header effects="waterfall resize-title blend-background parallax-background" condenses reveals shadow>
+    <app-toolbar>
+      <div condensed-title></div>
+    </app-toolbar>
+    <app-toolbar class="middle">
+      <img src="data/img/logo_l.png" class="middle-logo">
+    </app-toolbar>
+    <app-toolbar class="bottom">
+      <div main-title>Join Now</div>
+    </app-toolbar>
+  </app-header>
+
+  <paper-fab icon="icons:arrow-forward"></paper-fab>
+
+  <p>Log In</p>
 
   <template is="dom-bind">
 
     <iron-ajax url="data/answerHistory.json" auto last-response="{{answerHistory}}"></iron-ajax>
     <iron-ajax url="data/appointments.json" auto last-response="{{appointments}}"></iron-ajax>
+    <!--
     <app-layout recipes="[[answerHistory]]" appointments="[[appointments]]"></app-layout>
-
+    -->
   </template>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </body>
