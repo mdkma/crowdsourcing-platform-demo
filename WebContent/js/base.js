@@ -10,9 +10,8 @@ function login (){
     var identifier = dataObj['email'];
     //console.log(dataObj['email']);
     if(identifier === 'hi@derek.ma'){
-        console.log('student');
-        window.location.href = "login.html";
+        window.location.href = "asStudent.html";
     } else{
-        console.log('tutor');
+        window.location.href = "asTutor.html";
     }
 }

@@ -9,7 +9,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/iron-icons/social-icons.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../bower_components/paper-fab/paper-fab.html">
 
@@ -19,12 +24,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
 
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
-<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
 
-<dom-module id="main-page">
+<dom-module id="stu-main-page">
   <template>
 
     <style>
+
+    body {
+      background-color: #999;
+    }
 
     app-header {
       color: #fff;
@@ -75,8 +83,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
 
     .card-container {
-      display: inline-block;
-      width: 33.33%;
       color: black;
       text-decoration: none;
     }
@@ -93,7 +99,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     paper-card {
       display: block;
-      margin: 5px;
 
       --paper-card-header-image: {
         height: 200px;
@@ -149,28 +154,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         max-width: 400px;
       }
 
-      .card-container {
-        width: 100%;
-      }
     }
 
-    </style>
+    .thin {
+      font-size:3em;
+      font-weight:200;
+    }
 
+    .sub-thin{
+      font-size:2em;
+      font-weight:200;
+    }
 
-    <style is="custom-style">
-      paper-card.question { @apply(--layout-horizontal); }
-      .q-image {
-        width: 100px;
-        height: 170px;
-        background-size: cover;
-      }
-      .q-content {
-        @apply(--layout-flex);
-        float: left;
-      }
-      .q-header { @apply(--paper-font-headline); }
-      .q-name { color: var(--paper-grey-600); margin: 10px 0; }
-      }
+    .red {
+      --paper-card-background-color: red;
+    }
+
+    .brown {
+      --paper-card-background-color: brown;
+    }
+
     </style>
 
     <!-- main panel -->
@@ -187,24 +190,35 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </app-header>
 
       <div class="content">
-        <template is="dom-repeat" items="{{recipes}}"><!-- No empty text node
-        --><a href="#/detail/{{item.id}}" class="card-container">
-            <paper-card class="question">
-              <div class="q-content">
-                <div class="card-content">
-                  <div class="q-header">{{item.name}}</div>
-                  <div class="q-name">
-                    <img src={{item.authorImageUrl}} class="small-profile-img">
-                    {{item.author}}, {{item.time}}
-                  </div>
-                  <div><strong>{{item.category}}</strong></div>
-                  <div>{{item.description}}</div>
-                </div>
+        <iron-pages selected="0" class="question-page">
+          <div>
+            <div class="thin ml-2 mt-3 mb-3">Create New Question</div>
+            <div class="container">
+              <div class="row">
+                <a href="javascript:next();" class="card-container col">
+                  <paper-card heading="Chinese" class="red">
+                    <iron-icon icon="social:people" class="mb-3 ml-2"></iron-icon>35 Tutors Online
+                  </paper-card>
+                </a>
+                <a href="javascript:next();" class="card-container col">
+                  <paper-card heading="Chinese" class="red">
+                    <iron-icon icon="social:people" class="mb-3 ml-2"></iron-icon>35 Tutors Online
+                  </paper-card>
+                </a>
               </div>
-              <img src="{{item.imageUrl}}" class="q-image"></div>
-            </paper-card>
-          </a><!-- No empty text node
-        --></template>
+            </div>
+          </div>
+          <div>
+            <div class="thin ml-2 mt-3 mb-3">Tell more about your question</div>
+            <form is="iron-form" id="questionForm" class="item">
+              <paper-input name="email" label="Question Name"></paper-input>
+              <paper-input name="password" label="Details"></paper-input>
+              <paper-button raised id="submitButton" onclick="submitQuestion()" class="custom indigo mt-3 ml-3">Sign In</paper-button>
+            </form>
+          </div>
+          <div>Two
+          </div>
+        </iron-pages>
       </div>
 
     </app-header-layout>
@@ -216,7 +230,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   Polymer({
 
-    is: 'main-page',
+    is: 'stu-main-page',
 
     properties: {
       recipes: Object
@@ -224,5 +238,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   });
 
+  function next (){
+    var pages = document.querySelector('.question-page');
+    pages.selectNext();
+  }
+
   </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </dom-module>
