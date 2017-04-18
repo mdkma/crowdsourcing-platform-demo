@@ -24,6 +24,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
 
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-spinner/paper-spinner.html">
 
 <dom-module id="stu-main-page">
   <template>
@@ -166,12 +167,33 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       font-weight:200;
     }
 
-    .red {
-      --paper-card-background-color: red;
+    .color1 {
+      --paper-card-background-color: #F44336;
     }
 
-    .brown {
-      --paper-card-background-color: brown;
+    .color2 {
+      --paper-card-background-color: #9C27B0;
+    }
+    .color3 {
+      --paper-card-background-color: #795548;
+    }
+    .color4 {
+      --paper-card-background-color: #4CAF50;
+    }
+    .color5 {
+      --paper-card-background-color: #E91E63;
+    }
+    .color6 {
+      --paper-card-background-color: #3F51B5;
+    }
+    .color7 {
+      --paper-card-background-color: #673AB7;
+    }
+    .color8 {
+      --paper-card-background-color: #009688;
+    }
+    .color9 {
+      --paper-card-background-color: #00BCD4;
     }
 
     </style>
@@ -195,14 +217,50 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <div class="thin ml-2 mt-3 mb-3">Create New Question</div>
             <div class="container">
               <div class="row">
-                <a href="javascript:next();" class="card-container col">
-                  <paper-card heading="Chinese" class="red">
+                <a href="javascript:next();" class="card-container col mb-3 mt-2">
+                  <paper-card heading="Chinese" class="color1">
                     <iron-icon icon="social:people" class="mb-3 ml-2"></iron-icon>35 Tutors Online
                   </paper-card>
                 </a>
-                <a href="javascript:next();" class="card-container col">
-                  <paper-card heading="Chinese" class="red">
-                    <iron-icon icon="social:people" class="mb-3 ml-2"></iron-icon>35 Tutors Online
+                <a href="javascript:next();" class="card-container col mb-3 mt-2">
+                  <paper-card heading="English" class="color2">
+                    <iron-icon icon="social:people" class="mb-3 ml-2"></iron-icon>46 Tutors Online
+                  </paper-card>
+                </a>
+              </div>
+              <div class="row">
+                <a href="javascript:next();" class="card-container col mb-3 mt-2">
+                  <paper-card heading="ICT" class="color3">
+                    <iron-icon icon="social:people" class="mb-3 ml-2"></iron-icon>65 Tutors Online
+                  </paper-card>
+                </a>
+                <a href="javascript:next();" class="card-container col mb-3 mt-2">
+                  <paper-card heading="Biology" class="color4">
+                    <iron-icon icon="social:people" class="mb-3 ml-2"></iron-icon>24 Tutors Online
+                  </paper-card>
+                </a>
+              </div>
+              <div class="row">
+                <a href="javascript:next();" class="card-container col mb-3 mt-2">
+                  <paper-card heading="Math" class="color5">
+                    <iron-icon icon="social:people" class="mb-3 ml-2"></iron-icon>33 Tutors Online
+                  </paper-card>
+                </a>
+                <a href="javascript:next();" class="card-container col mb-3 mt-2">
+                  <paper-card heading="Chemestry" class="color6">
+                    <iron-icon icon="social:people" class="mb-3 ml-2"></iron-icon>31 Tutors Online
+                  </paper-card>
+                </a>
+              </div>
+              <div class="row">
+                <a href="javascript:next();" class="card-container col mb-3 mt-2">
+                  <paper-card heading="History" class="color7">
+                    <iron-icon icon="social:people" class="mb-3 ml-2"></iron-icon>13 Tutors Online
+                  </paper-card>
+                </a>
+                <a href="javascript:next();" class="card-container col mb-3 mt-2">
+                  <paper-card heading="Physic" class="color8">
+                    <iron-icon icon="social:people" class="mb-3 ml-2"></iron-icon>19 Tutors Online
                   </paper-card>
                 </a>
               </div>
@@ -213,8 +271,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <form is="iron-form" id="questionForm" class="item">
               <paper-input name="email" label="Question Name"></paper-input>
               <paper-input name="password" label="Details"></paper-input>
-              <paper-button raised id="submitButton" onclick="submitQuestion()" class="custom indigo mt-3 ml-3">Sign In</paper-button>
+              <paper-button raised id="submitButton" onclick="next_interval()" class="custom indigo mt-3 ml-3">Publish</paper-button>
             </form>
+          </div>
+          <div class="container">
+            <paper-spinner active></paper-spinner>
+            We are looking for a tutor for you...
+          </div>
+          <div>Your Tutor:
+            Janus Lin
+            The Hong Kong Polytechnic University
           </div>
           <div>Two
           </div>
@@ -241,6 +307,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   function next (){
     var pages = document.querySelector('.question-page');
     pages.selectNext();
+  }
+
+  function next_interval(){
+    next();
+    setTimeout(next, 7000);
   }
 
   </script>

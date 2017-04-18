@@ -15,3 +15,7 @@ function login (){
         window.location.href = "asTutor.html";
     }
 }
+
+function submitQuestion (){
+    
+}
