@@ -1,6 +1,25 @@
 [
+  
   {
     "id": "1",
+    "name": "Tom Mehrmann",
+    "post": "CEO of Ocean Park",
+    "time": "30 days to go",
+    "location": "Central, Hong Kong",
+    "imageUrl": "data/img/Tom-Mehrmann.png",
+    "description": "Tom Mehrmann was the Chief Executive of Ocean Park Corporation, Hong Kong’s marine life and animal theme park, which hosts more than seven million visitors annually from 2004 to 2016. Founded in 1977, Ocean Park is a not-for-profit statutory body. Mr. Mehrmann started his career in the theme park industry in 1977 at Knott’s Berry Farm in the United States as a sweeper, cleaning the Park grounds. From there, he spent the next 21 years progressively working through various management and leadership roles, eventually becoming Vice President of Park Operations and Entertainment in 1996."
+  },
+  {
+    "id": "2",
+    "name": "Alan See",
+    "post": "Co-founder of The Armoury",
+    "time": "34 days to go",
+    "location": "Wan Chai, Hong Kong",
+    "imageUrl": "data/img/profile_pic.jpg",
+    "description": "Alan See, co-founder of The Armoury (www.thearmoury.com), is one of the best-dressed men in Hong Kong. Started with two co-founders who share a passion for classic menswear in 2010, The Armoury has grown into a brand with a covetable lifestyle and devoted fans around the world.In a city that’s known for big luxury labels, The Armoury has not only successful created its league in Hong Kong, but also established itself on the international menswear map, opening their third store in New York City this year.The Armoury is the founders’ response to today’s trend of insubstantial products masked by expensive advertising. They strive to find companies, factories, workshops and craftsmen dedicated to their product and craft."
+  },
+  {
+    "id": "3",
     "name": "Prof. First Last",
     "post": "President of PolyU",
     "time": "14 days to go",
@@ -9,7 +28,7 @@
     "description": "Good Chance to Meet!!!"
   },
   {
-    "id": "2",
+    "id": "4",
     "name": "Dr. First Last",
     "post": "CEO of Inc",
     "time": "18 days to go",

@@ -25,6 +25,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
 <link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
 
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+
 <dom-module id="recipe-detail">
 
   <template>
@@ -117,7 +119,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <!-- top toolbar -->
         <app-toolbar>
           <!-- back button -->
-          <a href="#/home" tabindex="-1">
+          <a href="#/appointment" tabindex="-1">
             <paper-icon-button icon="app:arrow-back"></paper-icon-button>
           </a>
 
@@ -128,15 +130,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <paper-listbox class="dropdown-content">
               <paper-icon-item>
                 <iron-icon icon="app:share" item-icon></iron-icon>
-                Tweet recipe
+                Tweet
               </paper-icon-item>
               <paper-icon-item>
                 <iron-icon icon="app:email" item-icon></iron-icon>
-                Email recipe
+                Email
               </paper-icon-item>
               <paper-icon-item>
                 <iron-icon icon="app:textsms" item-icon></iron-icon>
-                Message recipe
+                Message
               </paper-icon-item>
               <paper-icon-item>
                 <iron-icon icon="app:group" item-icon></iron-icon>
@@ -152,28 +154,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <paper-card heading="{{recipe.name}}">
           <div class="card-content">
-
+            <p>{{recipe.post}}</p>
+            <p>{{recipe.time}}, {{recipe.location}}</p>
             <p>{{recipe.description}}</p>
 
-            <h4>Ingredients</h4>
-
-            <template is="dom-repeat" items="{{recipe.ingredients}}">
-              <div class="ingredient-item">
-                <div class="ingredient-amount">{{item.amount}}</div>
-                <div class="ingredient-name">{{item.description}}</div>
-              </div>
-            </template>
-
-            <h4>Steps</h4>
-
-            <template is="dom-repeat" items="{{recipe.steps}}">
-              <div class="ingredient-item">
-                <div class="ingredient-amount">{{item.duration}}</div>
-                <div class="ingredient-name">{{item.description}}</div>
-              </div>
-            </template>
-
           </div>
+
+          <paper-button raised id="submitButton" class="custom green mt-3 ml-3">Bid For the Appointment</paper-button>
         </paper-card>
 
         <paper-fab icon="{{__computeFavIcon(__favorite)}}" on-tap="__toggleFavorite"></paper-fab>

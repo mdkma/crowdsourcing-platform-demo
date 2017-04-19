@@ -26,8 +26,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/paper-spinner/paper-spinner.html">
 
-<link rel="import" href="dialog.html">
-
 <dom-module id="stu-main-page">
   <template>
 
@@ -216,6 +214,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       margin-top: 8em;
     }
 
+    .b-toolbar{
+      height: 3em;
+    }
+
+    .profile-img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+    }
+
     </style>
 
     <!-- main panel -->
@@ -318,15 +326,89 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <paper-button raised id="submitButton1" onclick="next()" class="custom green mt-3 ml-3">Start Session</paper-button>
             </div>
           </div>
-          <dialog name="dialog">
-            <paper-icon-button icon="app:menu" drawer-toggle></paper-icon-button>
-          </dialog>
+          <div class="container">
+            <div class="mt-3 row justify-content-start align-items-center bg-faded">
+              <img src="../data/img/profile_janus.jpg" class="mt-3 ml-2 mr-2 profile-img img-fluid">
+              <p>Hi! Derek! I'm Janus.</p>
+            </div>
+
+            <form is="iron-form" id="sendForm" class="b-toolbar footer bg-faded fixed-bottom mb-3 container">
+              <div class="row">
+                <paper-input name="input" class="col-9"></paper-input>
+                <paper-icon-button onclick="next_sentence()" icon="icons:send" class="col-3"></paper-icon-button>
+              </div>
+            </form>
+          </div>
+
+          <div class="container">
+            <div class="mt-3 row justify-content-start align-items-center bg-faded">
+              <img src="../data/img/profile_janus.jpg" class="mt-3 ml-2 mr-2 profile-img img-fluid">
+              <p>Hi! Derek! I'm Janus.</p>
+            </div>
+            <div id="show1" class="mt-3 row justify-content-end  align-items-center">
+              <p id="mess1">What is the goal of SEO?</p>
+              <img src="../data/img/profile_derek.jpg" class="mt-3 ml-2 mr-2 profile-img img-fluid">
+            </div>
+
+            <form is="iron-form" id="sendForm" class="b-toolbar footer bg-faded fixed-bottom mb-3 container">
+              <div class="row">
+                <paper-input name="input" class="col-9"></paper-input>
+                <paper-icon-button onclick="next_sentence()" icon="icons:send" class="col-3"></paper-icon-button>
+              </div>
+            </form>
+          </div>
+
+          <div class="container">
+            <div class="mt-3 row justify-content-start align-items-center bg-faded">
+              <img src="../data/img/profile_janus.jpg" class="mt-3 ml-2 mr-2 profile-img img-fluid">
+              <p>Hi! Derek! I'm Janus.</p>
+            </div>
+            <div id="show1" class="mt-3 row justify-content-end  align-items-center">
+              <p id="mess1">What is the goal of SEO?</p>
+              <img src="../data/img/profile_derek.jpg" class="mt-3 ml-2 mr-2 profile-img img-fluid">
+            </div>
+            <div class="mt-3 row justify-content-start align-items-center bg-faded">
+              <img src="../data/img/profile_janus.jpg" class="mt-3 ml-2 mr-2 profile-img img-fluid">
+              <p>It can let pages rank higher on the search engine results pages for relevant search terms. To Ensure a great user experience and increase websites’ credibility and driver conversion</p>
+            </div>
+
+            <form is="iron-form" id="sendForm" class="b-toolbar footer bg-faded fixed-bottom mb-3 container">
+              <div class="row">
+                <paper-input name="input" class="col-9"></paper-input>
+                <paper-icon-button onclick="next()" icon="icons:send" class="col-3"></paper-icon-button>
+              </div>
+            </form>
+          </div>
+          <div class="container">
+            <div class="mt-3 row justify-content-start align-items-center bg-faded">
+              <img src="../data/img/profile_janus.jpg" class="mt-3 ml-2 mr-2 profile-img img-fluid">
+              <p>Hi! Derek! I'm Janus.</p>
+            </div>
+            <div id="show1" class="mt-3 row justify-content-end  align-items-center">
+              <p id="mess1">What is the goal of SEO</p>
+              <img src="../data/img/profile_derek.jpg" class="mt-3 ml-2 mr-2 profile-img img-fluid">
+            </div>
+            <div class="mt-3 row justify-content-start align-items-center bg-faded">
+              <img src="../data/img/profile_janus.jpg" class="mt-3 ml-2 mr-2 profile-img img-fluid">
+              <p>It can let pages rank higher on the search engine results pages for relevant search terms. To Ensure a great user experience and increase websites’ credibility and driver conversion</p>
+            </div>
+            <div id="show1" class="mt-3 row justify-content-end  align-items-center">
+              <p id="mess1">Oh I see</p>
+              <img src="../data/img/profile_derek.jpg" class="mt-3 ml-2 mr-2 profile-img img-fluid">
+            </div>
+
+            <form is="iron-form" id="sendForm" class="b-toolbar footer bg-faded fixed-bottom mb-3 container">
+              <div class="row">
+                <paper-input name="input" class="col-9"></paper-input>
+                <paper-icon-button onclick="next()" icon="icons:send" class="col-3"></paper-icon-button>
+              </div>
+            </form>
+          </div>
         </iron-pages>
       </div>
 
     </app-header-layout>
 
-    <paper-fab icon="app:create"></paper-fab>
   </template>
 
   <script>
@@ -348,7 +430,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   function next_interval(){
     next();
-    setTimeout(next, 7000);
+    setTimeout(next, 6000);
+  }
+
+  function next_sentence(){
+    next();
+    setTimeout(next, 2000);
   }
 
   </script>

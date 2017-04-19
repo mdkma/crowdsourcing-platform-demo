@@ -19,18 +19,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <link rel="manifest" href="manifest.json">
   <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,700">
 
   <link rel="import" href="bower_components/iron-icons/iron-icons.html">
   <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
   <link rel="import" href="bower_components/paper-fab/paper-fab.html">
+  <link rel="import" href="bower_components/paper-input/paper-input.html">
+  <link rel="import" href="bower_components/paper-button/paper-button.html">
+
   <link rel="import" href="bower_components/app-layout/app-toolbar/app-toolbar.html">
   <link rel="import" href="bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
   <link rel="import" href="bower_components/app-layout/app-header/app-header.html">
-  <link rel="import" href="bower_components/paper-fab/paper-fab.html">
-  <link rel="import" href="bower_components/paper-input/paper-input.html">
-  <link rel="import" href="bower_components/paper-button/paper-button.html">
 
   <style is="custom-style">
 
@@ -44,6 +45,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       margin: 0;
       font-family: 'Roboto', 'Noto', sans-serif;
       background-color: #eee;
+    }
+    .item {
+      width: 85%;
     }
 
     app-header {
@@ -76,11 +80,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
 
     app-toolbar.middle {
-      height: 120px;
+      height: 200px;
     }
 
     .middle-logo{
       height:120px;
+      padding-bottom: 43px;
     }
 
     app-toolbar.bottom {
@@ -93,20 +98,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     [main-title] {
       position: absolute;
-      margin-left: 64px;
+      margin-left: 164px;
       font-size: 32px;
       font-weight: 300;
-      background-image: url('data/img/logo_l.png');
+      /*background-image: url('data/img/logo_l.png');
       background-repeat: no-repeat;
       background-position: center center;
-      background-size: 240px;
+      background-size: 240px;*/
     }
 
     [condensed-title] {
       margin-left: 20px;
       font-weight: 300;
-      background-image: url('data/img/logo_m.png');
-      background-size: 90px;
+      /*background-image: url('data/img/logo_m.png');
+      background-size: 90px;*/
     }
 
     paper-button.green {
@@ -123,24 +128,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 </head>
 <body>
 
-   <app-header effects="waterfall resize-title blend-background parallax-background" condenses reveals shadow>
+   <app-header effects="waterfall resize-title blend-background parallax-background" condenses reveals>
     <app-toolbar>
       <div condensed-title></div>
     </app-toolbar>
     <app-toolbar class="middle">
-      <img src="data/img/logo_l.png" class="middle-logo">
     </app-toolbar>
     <app-toolbar class="bottom">
+      <img src="data/img/logo_l.png" class="middle-logo">
       <div main-title>Join Now</div>
     </app-toolbar>
   </app-header>
 
   <paper-fab icon="icons:arrow-forward"></paper-fab>
 
-  <form is="iron-form" id="submitForm" class="item">
-		<paper-input name="email" label="Your Email" auto-validate pattern=".+[@].+[.].+" error-message="Please input a valid email!"></paper-input>
-		<paper-input name="password" label="Password" type="password"></paper-input>
-		<paper-button raised id="submitButton" onclick="login()" class="custom indigo mt-3 ml-3">Sign In</paper-button>
+  <form is="iron-form" id="submitForm" class="item footer fixed-bottom mb-3 container">
+    <div class="row justify-content-center">
+		  <paper-input name="email" label="Your Email" auto-validate pattern=".+[@].+[.].+" error-message="Please input a valid email!"></paper-input>
+    </div>
+    <div class="row justify-content-center">
+      <paper-input name="password" label="Password" type="password"></paper-input>
+    </div>
+		<paper-button raised id="submitButton" class="row" onclick="login()" class="custom green mt-3 ml-3">Sign In</paper-button>
 	</form>
 
   <script>
@@ -153,6 +162,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     });
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   <script src="js/base.js" type="text/javascript" chatset="utf-8"></script>
 </body>
 </html>

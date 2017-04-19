@@ -33,6 +33,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="appointments-page.html">
 <link rel="import" href="profile-page.html">
 <link rel="import" href="app-icons.html">
+<link rel="import" href="main-page.html">
 
 <dom-module id="app-layout">
 
@@ -50,7 +51,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
 
     .avatar-container .image {
-      background-image: url('../data/img/profile_derek.jpg');
+      background-image: url('../data/img/profile_janus.jpg');
       background-size: contain;
       border-radius: 50%;
       height: 100%;
@@ -104,8 +105,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <div class="image"></div>
             </div>
             <div class="contact-info">
-              <div class="name">Derek</div>
-              <div class="email">hi@derek.ma</div>
+              <div class="name">Janus</div>
+              <div>Tutor</div>
+              <div class="email">janus.lin@connect.polyu.hk</div>
             </div>
           </app-header>
 
@@ -134,7 +136,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <paper-icon-button icon="app:menu" drawer-toggle></paper-icon-button>
         </profile-page>
 
-        <main-page name="home">
+        <main-page name="home" recipes="[[recipes]]">
           <paper-icon-button icon="app:menu" drawer-toggle></paper-icon-button>
         </main-page>
 
@@ -149,7 +151,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <recipe-detail
             id="detailView"
             name="detail"
-            recipe="[[_getRecipe(recipes, _idData.id)]]"></recipe-detail>
+            recipe="[[_getRecipe(appointments, _idData.id)]]"></recipe-detail>
 
       </iron-pages>
 
@@ -192,9 +194,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     },
 
     _getRecipe: function() {
-      if (this.recipes && this._idData.id) {
-        for (var i = 0; i < this.recipes.length; ++i) {
-          var r = this.recipes[i];
+      if (this.appointments && this._idData.id) {
+        for (var i = 0; i < this.appointments.length; ++i) {
+          var r = this.appointments[i];
           if (r.id === this._idData.id) {
             return r;
           }
