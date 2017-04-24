@@ -4,77 +4,93 @@ Derek Mingyu MA
 [derek.ma](http://derek.ma)  
 [sc.derek.ma](http://sc.derek.ma/)
 
-A Java EE Web App that shows the usage of face recognition and palmprint identification technologies in airports.
+A crowdsourcing platform for real-time homework Q&A and bid for appointments based on Java EE.
 
-Only adapt to wide screen devices, such as laptops, PCs and Macs.
+Only adapt to small screen devices, such as smartphones.
 
-This web app is deployed at [bio.derek.ma](http://bio.derek.ma).
+This web app is currently deployed at [sc.derek.ma](http://sc.derek.ma).
 
 ## How to Use
 
-Go to root page at address `/` or `/index.html`, the interface shows five main functions of the demo systems:
+Go to root page at address `/`, the interface shows the login functions:
 
-* **Sign Up**("Sign Up Now" button on the left)
-* **Check In**
-* **Drop or Collect Bags**
-* **Immigration Check**
-* **Pay**
+### Log in as a Student
 
-After clicking each function, two and **only** two operations can be taken:
+* Username: `hi@derek.ma`
+* Password: anything
 
-* **Click** any part of the page to **view next interface**
-* Click the **"home" button** floating at the right bottom corner to **go back to root page**
+Then you will login as a student called "Derek".
+
+### Log in as a Tutor
+
+* Username and password: anything
+
+Then you will login as a tutor called "Janus".
+
+### Switch between pages
+
+Press the "menu" at the left top corner of the interface and change tab.
 
 ## Demo Content
 
-### Sign Up
+### As Student
 
-1. Sign up procedure is shown at right top corner
-2. Verify passport notification
-3. Scanning passport
-4. Passport scan finish and load personal information, notice user to scan palmprint
-5. Which hand(L/R) scanned is identified and remind user to scan the same hand again
-6. Remind the user to scan for the third time
-7. Remind user to look at the camera to scan face
-8. Saving page
-9. Notice of successfully sign up.
+#### Home / New Question Page
 
-### Check In
+1. Input question name and details, press `PUBLISH`
+2. Looking for a tutor automatically
+3. Show the information of the tutor, press `START SESSION` to start
+4. Then you can see the chatroom interface
 
-1. Scan
-2. Looking for user data
-3. Show user and flight information
-4. Process check in
-5. Done
+#### Profile Page
 
-### Drop or Collect Bags
+1. Personal information and statistics are shown
+2. User can modify their name and description and press `MODIFY`
 
-Bag Drop:
+#### Question History
 
-1. Scan
-2. Show user and flight information
-3. Drop bags
+1. View all histories
+2. Press the card to see more details about that question
 
-Bag Collection:
+### As Tutor
 
-1. Scan
-2. Bags are taken out on the conveyor, notice the user to take
+#### Home/Answer Page
 
+1. All categories and online people numbers are shown
+2. Choose a category by pressing the tile
+3. View all questions at that category currently, press any one
+4. Automatically matching with students and show the information of the student
+5. Press `START SESSION` to talk
 
-### Immigration Check
+#### Profile Page
 
-1. Scan
-2. Processing
-3. Show user information, finishing immigration procedure
-4. Done
+1. The name, rating, serving hours are shown
+2. User can change name, preferred subjects and description and press `MODIFY`
 
+#### Question History Page
 
-### Pay
+1. View all questions that answered before
 
-1. Choose payment situation(*in this demo, only upgrading classes is shown*)
-2. Show upgrading choices
-3. Confirm payment
-4. Processing
-5. Done
+#### Appointment Page
+
+1. View all available appointments
+2. Click in the appointment to know more
+3. Click the heart button to favorite the appointment
+4. Click the `BID FOR THE APPOINTMENT` button to bid
+5. Click the three dots at the right top corner to share the appointment via email, message, twitter or Facebook
+
+## Running Environment
+
+You can run the sources on:
+
+* Java SDK 8
+* Tomcat 7
+
+## Testing Environment
+
+Currently, this web app is tested in following environment:
+
+* Chrome 57
+* Smartphone with resolutions: 1920*1080
 
 
